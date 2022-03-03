@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
+const generatorMarkdown = require(path.join(__dirname, "/src/page-template.js"))
 
 const questions = [
   {
@@ -48,7 +49,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions)
   .then((allAnswers) => {
-    writeToFile("newWeb.html", JSON.stringify(allAnswers))
+    writeToFile("newWeb.html", generatorMarkdown(allAnswers))
   })
 }
 

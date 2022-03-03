@@ -1,4 +1,10 @@
 
+function generateTeam(data) {
+  return JSON.stringify(data)
+}
+
+function generateMarkdown(data) {
+  return `
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -8,7 +14,11 @@
     <title>Document</title>
   </head>
   <body>
-  {"name":"lome","id":"999","email":"999@lome.com","role":"Engineer"}
+  ${generateTeam(data)}
   </body>
   </html>
-    
+    `;
+};
+
+
+module.exports = generateMarkdown;
