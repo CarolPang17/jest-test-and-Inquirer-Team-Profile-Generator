@@ -63,7 +63,6 @@ const addManger = async (answers) => {
     mangerAnswers.officeNumber
   );
   allEmplyee.push(newManager)
-    console.log(allEmplyee)
 return
 }
 
@@ -83,7 +82,6 @@ const addEngineer = async (answers) => {
     enginnerAnswers.github
   );
   allEmplyee.push(newEngineer)
-    console.log(allEmplyee)
 return
 }
 
@@ -103,7 +101,6 @@ const addIntern = async (answers) => {
     internAnswers.school
   );
   allEmplyee.push(newIntern)
-    console.log(allEmplyee)
 return
 }
 
@@ -132,7 +129,7 @@ async function init() {
   await questions()
 
   await questions()
-
+  writeToFile("newWeb.html", generatorMarkdown(allEmplyee))
 }
 
 init();
