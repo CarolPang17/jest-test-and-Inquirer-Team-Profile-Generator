@@ -1,7 +1,31 @@
 
+var htmlContent = [];
+
+
 function generateTeam(data) {
-  return JSON.stringify(data)
+   var numOfTeams = Object.keys(data)
+   console.log(`numOfTeams : ${numOfTeams}`)
+   for (var i = 0; i < numOfTeams.length ;i++){
+     var numOfManger = data[i].manager.length
+     console.log(`curret Team  : team ${i}`)
+     console.log(`curret numOfManger  : ${numOfManger}`)
+     for(var j = 0l j < numOfManger ; j++){
+       
+     }
+    htmlContent.push(JSON.stringify(data[i].manager))
+   }
+  //  numOfManger = data[i].manager.length
+  // //  htmlContent.push(JSON.stringify(data[i].manager)
+  // //  for(var j = 0; j < numOfManger ;j++){
+  // //   htmlContent.push(JSON.stringify(data[i].manager) )
+  // //  }
+  // }
+  return htmlContent ;
+
+  // return JSON.stringify(data)
 }
+
+
 
 function generateMarkdown(data) {
   return `

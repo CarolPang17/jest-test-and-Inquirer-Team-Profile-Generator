@@ -129,28 +129,6 @@ function writeToFile(fileName, data) {
     });
   });
 }
-  // function printDataFun() {
-  //       const printData =  inquirer.prompt([
-  //     {
-  //       name: "wantPrintData",
-  //       type: "list",
-  //       choices: [
-  //         "Yes, please print all emplyee data as of now",
-  //         "No thanks , do not print now",
-  //       ],
-  //       message:
-  //         "Would you like to print the emplyee data that you just entered?",
-  //     },
-  //   ]);
-
-  //   if (
-  //     printData.wantPrintData === "Yes, please print all emplyee data as of now"
-  //   ) {
-  //     console.log(`-----------------------------`);
-  //     console.log(`below is current teams and emplyee data`);
-  //     console.log(JSON.stringify(allEmplyee));
-  //   }
-  // }
   async function createNewTeam() {
   teamNum = teamNum + 1;
   console.log(`--------------------------------------------------`);
@@ -193,3 +171,4 @@ async function init() {
 }
 
 init();
+
