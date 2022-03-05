@@ -6,34 +6,39 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
-const allEmplyee =[]
+var allEmplyee ={}
+var teamNum = -1;
+var engMenber;
+var internMenber;
 
 const questions = async () => {
   const answers = await inquirer
   .prompt([
   {
     type: "input",
-    message: "What is your name?",
+    message: "What the name of this emplyee?",
     name: "name",
   },
   {
     type: "input",
-    message: "What is your ID number?",
+    message: "What is the ID number of this emplyee?",
     name: "id",
   },
   {
     type: "input",
-    message: "What is your email?",
+    message: "What is the email of this emplyee?",
     name: "email",
   },
   {
     type: "list",
-    message: "What is your role?",
+    message: "What is the role of this emplyee?",
     name: "role",
     choices: ["Engineer", "Intern", "Manager"],
   }
 ])
 if(answers.role === "Manager"){
+  teamNum = teamNum + 1;
+  console.log(`teamNum : ${teamNum}`)
   await addManger(answers)
 }
 
@@ -56,13 +61,19 @@ const addManger = async (answers) => {
       name: "officeNumber"
     }
   ])
+
   const newManager = new Manager(
     answers.name,
     answers.id,
     answers.email,
     mangerAnswers.officeNumber
   );
-  allEmplyee.push(newManager)
+
+  allEmplyee[teamNum] = {};
+  allEmplyee[teamNum].manager = newManager
+  engMenber = [];
+  internMenber = [];
+
 return
 }
 
@@ -81,7 +92,8 @@ const addEngineer = async (answers) => {
     answers.email,
     enginnerAnswers.github
   );
-  allEmplyee.push(newEngineer)
+  allEmplyee[teamNum].engineer = engMenber
+  engMenber.push(newEngineer)
 return
 }
 
@@ -100,7 +112,10 @@ const addIntern = async (answers) => {
     answers.email,
     internAnswers.school
   );
-  allEmplyee.push(newIntern)
+
+  allEmplyee[teamNum].intern = internMenber
+  internMenber.push(newIntern)
+  console.log(allEmplyee)
 return
 }
 
@@ -128,7 +143,13 @@ async function init() {
 
   await questions()
 
-  await questions()
+ await questions()
+ await questions()
+ await questions()
+ await questions()
+ await questions()
+
+
   writeToFile("newWeb.html", generatorMarkdown(allEmplyee))
 }
 
