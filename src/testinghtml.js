@@ -134,6 +134,6 @@ internMenber1.push(newIntern3);
     });
   });
 }
-
+// console.log(JSON.stringify(testingAllEmplyee))
 writeToFile("../newtestingWeb.html", generatorMarkdown(testingAllEmplyee))
 

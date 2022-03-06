@@ -5,6 +5,25 @@ body{
 .aTeam {
   width: 100%;
   background-color: red;
+  margin: 0.3rem;
+  text-align: center;
+}
+
+.printTeamNum{
+  font-size: 3.5em;
+  background-color: orchid;
+}
+
+.teamInnerContainer{
+  background-color: blue;
+  padding: 2rem;
+  display: flex;
+  flex-wrap:wrap;
+  margin: 0.5rem;
+}
+.singleEmployee {
+  margin: 2rem;
+  width: 15rem;
 }
 
 .managerDiv {
@@ -17,8 +36,4 @@ body{
 
 .internDiv {
   background-color: orange;
-}
-
-.singleEmployee {
-  margin: .2rem;
 }

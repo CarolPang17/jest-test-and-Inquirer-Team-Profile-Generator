@@ -4,84 +4,72 @@ function generatehtml(data) {
   var numOfTeams = Object.keys(data);
   console.log(`numOfTeams : ${numOfTeams}`);
   for (var i = 0; i < numOfTeams.length; i++) {
-    var newTeamContainer =
-    `<div class="aTeam team${i}">
-        <p>hi this is team ${i}</p>
-        <div>${generateTeam(data,i)}</div>
+    var newTeamContainer = `<div class="aTeam team${i}">
+        <p class="printTeamNum" > team ${i}</p>
+        <div class="teamInnerContainer">${generateTeam(data, i)}</div>
     </div>`;
     htmlContent += newTeamContainer;
   }
 
   function generateTeam(data, i) {
-    var allTeamMenberinThisTeam = ``
+    var allTeamMenberinThisTeam = ``;
 
-    if(data[i].manager){
-      var allManagerDivinThisTeam = generateManagerDiv(data, i);
-       allTeamMenberinThisTeam += allManagerDivinThisTeam;
+    if (data[i].manager) {
+      var allManagerDivinThisTeam = generateManagersDivs(data, i);
+      allTeamMenberinThisTeam += allManagerDivinThisTeam;
     }
-    if(data[i].engineer){
-      var allEnginnerDivinThisTeam = generateEngineerDiv(data, i);
-       allTeamMenberinThisTeam += allEnginnerDivinThisTeam;
+    if (data[i].engineer) {
+      var allEnginnerDivinThisTeam = generateEngineersDivs(data, i);
+      allTeamMenberinThisTeam += allEnginnerDivinThisTeam;
     }
-    if(data[i].intern){
-      var allInternDivinThisTeam = generateInternDiv(data, i);
-       allTeamMenberinThisTeam += allInternDivinThisTeam;
+    if (data[i].intern) {
+      var allInternDivinThisTeam = generateInternsDivs(data, i);
+      allTeamMenberinThisTeam += allInternDivinThisTeam;
     }
-
 
     return allTeamMenberinThisTeam;
   }
 
-  function generateManagerDiv(data, i) {
+  function generateManagersDivs(data, i) {
     var numOfManager = data[i].manager.length;
     var managerDiv = ``;
 
     for (var j = 0; j < numOfManager; j++) {
-      var manageRole = `<p class="oneRow"> Role : Manager </p>`;
-      var managername = `<p class="oneRow"> Name :${JSON.stringify(
-        data[i].manager[j].name
-      )}</p>`;
-      var manageId = `<p class="oneRow"> ID :${JSON.stringify(
-        data[i].manager[j].id
-      )}</p>`;
-      var manageEmail = `<p class="oneRow"> Email :${JSON.stringify(
-        data[i].manager[j].email
-      )}</p>`;
-      var manageOfficeNumber = `<p class="oneRow"> Office Number :${JSON.stringify(
-        data[i].manager[j].officeNumber
-      )}</p>`;
+
+      var manageRole = `<p class="oneRow"> Role : ${
+        data[i].manager[j].getRole()} </p>`;
+      var managername = `<p class="oneRow"> Name :${
+        data[i].manager[j].getName()
+      }</p>`;
+      var manageId = `<p class="oneRow"> ID :${ data[i].manager[j].getId()
+      }</p>`;
+      var manageEmail = `<p class="oneRow"> Email :${ data[i].manager[j].getEmail()
+      }</p>`;
+      var manageOfficeNumber = `<p class="oneRow"> Office Number :${ data[i].manager[j].getOfficeNumber()}</p>`;
 
       var managerdata =
-         managername + manageRole + manageId + manageEmail + manageOfficeNumber;
+        managername + manageRole + manageId + manageEmail + manageOfficeNumber;
 
-      var singleMangerDiv = `<div class="managerDiv team${i}manger${j} singleEmplyoee">${managerdata}</div>`;
+      var singleMangerDiv = `<div class="managerDiv team${i}manger${j} singleEmployee">${managerdata}</div>`;
       managerDiv += singleMangerDiv;
     }
     return managerDiv;
   }
 
-  function generateEngineerDiv(data, i) {
+  function generateEngineersDivs(data, i) {
     var numOfEngineer = data[i].engineer.length;
     var engineerDiv = ``;
 
     for (var j = 0; j < numOfEngineer; j++) {
-      var engineerRole = `<p class="oneRow"> Role : Engineer </p>`;
-      var engineername = `<p class="oneRow"> Name :${JSON.stringify(
-        data[i].engineer[j].name
-      )}</p>`;
-      var engineerId = `<p class="oneRow"> ID :${JSON.stringify(
-        data[i].engineer[j].id
-      )}</p>`;
-      var engineerEmail = `<p class="oneRow"> Email :${JSON.stringify(
-        data[i].engineer[j].email
-      )}</p>`;
-      var engineerGithub = `<p class="oneRow"> Github :${JSON.stringify(
-        data[i].engineer[j].github
-      )}</p>`;
+      var engineerRole = `<p class="oneRow"> Role : ${data[i].engineer[j].getRole()} </p>`;
+      var engineername = `<p class="oneRow"> Name :${data[i].engineer[j].getName()}</p>`;
+      var engineerId = `<p class="oneRow"> ID :${data[i].engineer[j].getId()}</p>`;
+      var engineerEmail = `<p class="oneRow"> Email :${data[i].engineer[j].getEmail()}</p>`;
+      var engineerGithub = `<p class="oneRow"> Github :${data[i].engineer[j].getGithub()}</p>`;
 
       var engineerdata =
-
-        engineername +engineerRole +
+        engineername +
+        engineerRole +
         engineerId +
         engineerEmail +
         engineerGithub;
@@ -92,24 +80,16 @@ function generatehtml(data) {
     return engineerDiv;
   }
 
-  function generateInternDiv(data, i) {
+  function generateInternsDivs(data, i) {
     var numOfIntern = data[i].intern.length;
     var internDiv = ``;
 
     for (var j = 0; j < numOfIntern; j++) {
-      var internRole = `<p class="oneRow"> Role : Intern </p>`;
-      var internName = `<p class="oneRow employeeNAme"> Name :${JSON.stringify(
-        data[i].intern[j].name
-      )}</p>`;
-      var internId = `<p class="oneRow"> ID :${JSON.stringify(
-        data[i].intern[j].id
-      )}</p>`;
-      var internEmail = `<p class="oneRow"> Email :${JSON.stringify(
-        data[i].intern[j].email
-      )}</p>`;
-      var internSchool = `<p class="oneRow"> Github :${JSON.stringify(
-        data[i].intern[j].school
-      )}</p>`;
+      var internRole = `<p class="oneRow"> Role : ${data[i].intern[j].getRole()} </p>`;
+      var internName = `<p class="oneRow employeeNAme"> Name :${data[i].intern[j].getName()}</p>`;
+      var internId = `<p class="oneRow"> ID :${data[i].intern[j].getId()}</p>`;
+      var internEmail = `<p class="oneRow"> Email :${data[i].intern[j].getEmail()}</p>`;
+      var internSchool = `<p class="oneRow"> Github :${data[i].intern[j].getSchool()}</p>`;
 
       var internData =
         internName + internRole + internId + internEmail + internSchool;
@@ -133,7 +113,8 @@ function generateMarkdown(data) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style.css">
-    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title> Team menber info </title>
   </head>
   <body>
   ${generatehtml(data)}
