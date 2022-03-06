@@ -19,14 +19,14 @@ testingAllEmplyee[0].manager = managerMenber;
 const newManager1 = new Manager(
   'Apple',
   'AppleID',
-  'Apple111@manager.com',
+  'AppleTeam0@manager.com',
   'AppleofficeNumber'
 );
 
 const newManager2 = new Manager(
   'Bille',
   'BilleID',
-  'Bille111@manager.com',
+  'BilleTeam0@manager.com',
   'BilleofficeNumber'
 );
 managerMenber.push(newManager1);
@@ -37,7 +37,7 @@ const newEngineer1 = new Engineer(
   'Cathy',
   'CathyID',
   'Cathy@engineer.com',
-  'CathyfficeNumber'
+  'CathyGithub'
 );
 
 engMenber.push(newEngineer1);
@@ -92,7 +92,7 @@ const newEngineer2 = new Engineer(
   'HarrieTeam1',
   'HarrieTeam1ID',
   'HarrieyTeam1@engineer.com',
-  'HarrieTeam1oficeNumber'
+  'HarrieTeam1Github'
 );
 
 engMenber1.push(newEngineer2);
@@ -135,5 +135,5 @@ internMenber1.push(newIntern3);
   });
 }
 
-writeToFile("newtestingWeb.html", generatorMarkdown(testingAllEmplyee))
+writeToFile("../newtestingWeb.html", generatorMarkdown(testingAllEmplyee))
 

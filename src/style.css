@@ -6,3 +6,19 @@ body{
   width: 100%;
   background-color: red;
 }
+
+.managerDiv {
+  background-color: yellow;
+}
+
+.engineerDiv{
+  background-color: blueviolet;
+}
+
+.internDiv {
+  background-color: orange;
+}
+
+.singleEmployee {
+  margin: .2rem;
+}
