@@ -5,7 +5,7 @@ function generatehtml(data) {
   console.log(`numOfTeams : ${numOfTeams}`);
   for (var i = 0; i < numOfTeams.length; i++) {
     var newTeamContainer = `<div class="aTeam team${i}">
-        <p class="printTeamNum" > team ${i}</p>
+        <p class="printTeamNum" > ${generateTeamNumber(i)}</p>
         <div class="teamInnerContainer">${generateTeam(data, i)}</div>
     </div>`;
     htmlContent += newTeamContainer;
@@ -30,22 +30,30 @@ function generatehtml(data) {
     return allTeamMenberinThisTeam;
   }
 
+  function generateTeamNumber(i) {
+    if(i === 0){
+      return 'My Team'
+    } else {
+      return ` Other Team ${i}`
+    }
+  }
+
   function generateManagersDivs(data, i) {
     var numOfManager = data[i].manager.length;
     var managerDiv = ``;
 
     for (var j = 0; j < numOfManager; j++) {
 
-      var manageRole = `<p class="oneRow"> Role : ${
+      var manageRole = `<p class="oneRow bigRow"> Role : ${
         data[i].manager[j].getRole()} </p>`;
-      var managername = `<p class="oneRow"> Name :${
+      var managername = `<p class="oneRow bigRow"> Name : ${
         data[i].manager[j].getName()
       }</p>`;
-      var manageId = `<p class="oneRow"> ID :${ data[i].manager[j].getId()
+      var manageId = `<p class="oneRow smallRow"> ID : ${ data[i].manager[j].getId()
       }</p>`;
-      var manageEmail = `<p class="oneRow"> Email :${ data[i].manager[j].getEmail()
-      }</p>`;
-      var manageOfficeNumber = `<p class="oneRow"> Office Number :${ data[i].manager[j].getOfficeNumber()}</p>`;
+      var manageEmail = `<p class="oneRow smallRow"> Email : <a href="mailto:${data[i].manager[j].getEmail()}">${ data[i].manager[j].getEmail()
+      } </a></p>`;
+      var manageOfficeNumber = `<p class="oneRow smallRow"> Office Number : ${ data[i].manager[j].getOfficeNumber()}</p>`;
 
       var managerdata =
         managername + manageRole + manageId + manageEmail + manageOfficeNumber;
@@ -61,11 +69,11 @@ function generatehtml(data) {
     var engineerDiv = ``;
 
     for (var j = 0; j < numOfEngineer; j++) {
-      var engineerRole = `<p class="oneRow"> Role : ${data[i].engineer[j].getRole()} </p>`;
-      var engineername = `<p class="oneRow"> Name :${data[i].engineer[j].getName()}</p>`;
-      var engineerId = `<p class="oneRow"> ID :${data[i].engineer[j].getId()}</p>`;
-      var engineerEmail = `<p class="oneRow"> Email :${data[i].engineer[j].getEmail()}</p>`;
-      var engineerGithub = `<p class="oneRow"> Github :${data[i].engineer[j].getGithub()}</p>`;
+      var engineerRole = `<p class="oneRow bigRow"> Role : ${data[i].engineer[j].getRole()} </p>`;
+      var engineername = `<p class="oneRow bigRow"> Name : ${data[i].engineer[j].getName()}</p>`;
+      var engineerId = `<p class="oneRow smallRow"> ID : ${data[i].engineer[j].getId()}</p>`;
+      var engineerEmail = `<p class="oneRow smallRow"> Email : <a href="mailto:${data[i].engineer[j].getEmail()}">${data[i].engineer[j].getEmail()}</a></p>`;
+      var engineerGithub = `<p class="oneRow smallRow"> Github : <a href="https://github.com/${data[i].engineer[j].getGithub()}">${data[i].engineer[j].getGithub()}</a></p>`;
 
       var engineerdata =
         engineername +
@@ -85,11 +93,11 @@ function generatehtml(data) {
     var internDiv = ``;
 
     for (var j = 0; j < numOfIntern; j++) {
-      var internRole = `<p class="oneRow"> Role : ${data[i].intern[j].getRole()} </p>`;
-      var internName = `<p class="oneRow employeeNAme"> Name :${data[i].intern[j].getName()}</p>`;
-      var internId = `<p class="oneRow"> ID :${data[i].intern[j].getId()}</p>`;
-      var internEmail = `<p class="oneRow"> Email :${data[i].intern[j].getEmail()}</p>`;
-      var internSchool = `<p class="oneRow"> Github :${data[i].intern[j].getSchool()}</p>`;
+      var internRole = `<p class="oneRow bigRow"> Role : ${data[i].intern[j].getRole()} </p>`;
+      var internName = `<p class="oneRow bigRow"> Name : ${data[i].intern[j].getName()}</p>`;
+      var internId = `<p class="oneRow smallRow"> ID : ${data[i].intern[j].getId()}</p>`;
+      var internEmail = `<p class="oneRow smallRow"> Email : <a href="mailto:${data[i].intern[j].getEmail()}">${data[i].intern[j].getEmail()} </a></p>`;
+      var internSchool = `<p class="oneRow smallRow"> School :${data[i].intern[j].getSchool()}</p>`;
 
       var internData =
         internName + internRole + internId + internEmail + internSchool;

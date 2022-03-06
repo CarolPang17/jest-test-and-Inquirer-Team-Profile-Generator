@@ -1,39 +1,55 @@
 body{
-  background-color: aqua;
+  background-color: white;
 }
 
 .aTeam {
   width: 100%;
-  background-color: red;
+  background-color: #c2cad7;
   margin: 0.3rem;
   text-align: center;
 }
 
 .printTeamNum{
+
   font-size: 3.5em;
-  background-color: orchid;
+  /* color: white; */
+  background-color: #FBE3DF;
+  padding-bottom: .2em;
+  border-bottom: 0.5rem solid #DEBB95;
+  /* border-image: linear-gradient(0.25turn,#e66465, #b98068); */
+  /* border-image-slice: 1; */
 }
 
 .teamInnerContainer{
-  background-color: blue;
+  background-color: #c2cad7;
   padding: 2rem;
   display: flex;
   flex-wrap:wrap;
-  margin: 0.5rem;
+
 }
+
 .singleEmployee {
   margin: 2rem;
-  width: 15rem;
+  width: 25rem;
+  height: 15rem;
+  background-color: #eadfdb;
+  border-radius: 30px;
 }
 
-.managerDiv {
-  background-color: yellow;
+.oneRow {
+  margin: 0%;
 }
 
-.engineerDiv{
-  background-color: blueviolet;
+.bigRow {
+  font-size: 1.5em;
+  color: #eadfdb;
+  background-color: #4e6380;
 }
 
-.internDiv {
-  background-color: orange;
+.smallRow{
+  font-size: 1.3em;
+  color: #4E3A2F;
+  padding: 0.6rem;
+  margin: 0.2em;
 }
+

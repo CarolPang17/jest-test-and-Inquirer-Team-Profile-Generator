@@ -131,9 +131,16 @@ function writeToFile(fileName, data) {
 }
   async function createNewTeam() {
   teamNum = teamNum + 1;
-  console.log(`--------------------------------------------------`);
-  console.log(` We are now building a new team |  Team Number : ${teamNum} `);
-  console.log(`--------------------------------------------------`);
+  if(teamNum === 0){
+    console.log(`--------------------------------------------------`);
+    console.log(` We are now building your own team |  Team Number : ${teamNum} `);
+    console.log(`--------------------------------------------------`);
+  } else {
+    console.log(`--------------------------------------------------`);
+    console.log(` We are now building a new additional team |  Team Number : ${teamNum} `);
+    console.log(`--------------------------------------------------`);
+  }
+
 
   allEmplyee[teamNum] = {};
   managerMenber = [];

@@ -48,7 +48,7 @@ const newIntern1 = new Intern(
   'Davie',
   'DavieID',
   'Davie@eintern.com',
-  'DavieoficeNumber'
+  'DavieSchool'
 );
 
 internMenber.push(newIntern1);
@@ -103,14 +103,14 @@ const newIntern2 = new Intern(
   'IvyTeam1',
   'IvyTeam1ID',
   'IvyTeam1@eintern.com',
-  'IvyTeam1oficeNumber'
+  'IvyTeam1School'
 );
 
 const newIntern3 = new Intern(
   'JackyTeam1',
   'JackyTeam1ID',
   'JackyTeam1@eintern.com',
-  'JackyTeam1oficeNumber'
+  'JackyTeam1School'
 );
 
 internMenber1.push(newIntern2);
