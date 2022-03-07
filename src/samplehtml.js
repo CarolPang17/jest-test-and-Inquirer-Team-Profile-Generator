@@ -17,10 +17,10 @@ var internMenber = [];
 testingAllEmplyee[0] = {}
 testingAllEmplyee[0].manager = managerMenber;
 const newManager1 = new Manager(
-  'Apple',
-  'AppleID',
-  'AppleTeam0@manager.com',
-  'AppleofficeNumber'
+  'Ava',
+  'AvaID',
+  'Ava@manager.com',
+  'Ava123456'
 );
 
 const newManager2 = new Manager(
@@ -45,10 +45,10 @@ engMenber.push(newEngineer1);
 testingAllEmplyee[0].intern = internMenber;
 
 const newIntern1 = new Intern(
-  'Davie',
-  'DavieID',
-  'Davie@eintern.com',
-  'DavieSchool'
+  'David',
+  'DavidID',
+  'David@eintern.com',
+  'DavidSchool'
 );
 
 internMenber.push(newIntern1);
@@ -66,21 +66,21 @@ const newManager3 = new Manager(
   'EvaTeam1',
   'EvaTeam1ID',
   'EvaTeam1@manager.com',
-  'EvaTeam1officeNumber'
+  'EvaTeam1123456'
 );
 
 const newManager4 = new Manager(
-  'FishTeam1',
-  'FishTeam1ID',
-  'FishTeam1@manager.com',
-  'FishTeam1officeNumber'
+  'FrankTeam1',
+  'FrankTeam1ID',
+  'FrankTeam1@manager.com',
+  'FrankTeam1123456'
 );
 
 const newManager5 = new Manager(
-  'FHTeam1',
-  'FHTeam1ID',
-  'FHTeam1@manager.com',
-  'FHTeam1officeNumber'
+  'Fionaeam1',
+  'FionaTeam1ID',
+  'FionaTeam1@manager.com',
+  'FionaTeam1officeNumber'
 );
 managerMenber1.push(newManager3);
 managerMenber1.push(newManager4);
@@ -117,6 +117,36 @@ internMenber1.push(newIntern2);
 internMenber1.push(newIntern3);
 
 // console.log(testingAllEmplyee)
+//////////////////////////////////////////////////
+var managerMenber2 = [];
+var engMenber2 = [];
+var internMenber2 = [];
+
+testingAllEmplyee[2] = {}
+testingAllEmplyee[2].manager = managerMenber2;
+testingAllEmplyee[2].intern = internMenber2;
+
+testingAllEmplyee[2].engineer = engMenber2;
+
+const newEngineer3 = new Engineer(
+  'KatieTeam2',
+  'KatieTeam2ID',
+  'KatieTeam2@engineer.com',
+  'KatieTeam2Github'
+);
+
+const newEngineer4 = new Engineer(
+  'LilyTeam2',
+  'LilyTeam2ID',
+  'LilyTeam2@engineer.com',
+  'LilyTeam2Github'
+);
+
+engMenber2.push(newEngineer3);
+engMenber2.push(newEngineer4);
+
+
+
 
  function writeToFile(fileName, data) {
   return new Promise((resolve, reject) => {
@@ -135,5 +165,5 @@ internMenber1.push(newIntern3);
   });
 }
 // console.log(JSON.stringify(testingAllEmplyee))
-writeToFile("../newtestingWeb.html", generatorMarkdown(testingAllEmplyee))
+writeToFile("../sample.html", generatorMarkdown(testingAllEmplyee))
 
