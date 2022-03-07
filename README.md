@@ -6,6 +6,9 @@ https://drive.google.com/file/d/1FBxqT7vHWh9Bpk5Jgwr3Pcj2WJFtpiD8/view?usp=shari
 github link:<br />
 https://github.com/CarolPang17/jest-test-and-Inquirer-Team-Profile-Generator<br />
 
+sample html :<br />
+https://carolpang17.github.io/jest-test-and-Inquirer-Team-Profile-Generator/sample.html<br />
+
 installation requirement:
 1. npm i <br />
 2. npm init <br />
