@@ -116,7 +116,7 @@ const addIntern = async (answers) => {
 function writeToFile(fileName, data) {
   return new Promise((resolve, reject) => {
     fs.writeFile(fileName, data, (err) => {
-      console.log(fileName);
+      // console.log(fileName);
       if (err) {
         reject(err);
         return;
@@ -174,6 +174,10 @@ async function init() {
     return init();
   }
 
+
+  console.log(`-------------------------------------------------------`);
+  console.log(` HTML page has been created, please see "newWeb.html" file! `);
+  console.log(`-------------------------------------------------------`);
   return writeToFile("newWeb.html", generatorMarkdown(allEmplyee));
 }
 

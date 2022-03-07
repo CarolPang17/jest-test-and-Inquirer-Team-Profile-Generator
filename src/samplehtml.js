@@ -63,21 +63,21 @@ testingAllEmplyee[1] = {}
 testingAllEmplyee[1].manager = managerMenber1;
 
 const newManager3 = new Manager(
-  'EvaTeam1',
+  'Eva',
   'EvaTeam1ID',
   'EvaTeam1@manager.com',
   'EvaTeam1123456'
 );
 
 const newManager4 = new Manager(
-  'FrankTeam1',
+  'Frank',
   'FrankTeam1ID',
   'FrankTeam1@manager.com',
   'FrankTeam1123456'
 );
 
 const newManager5 = new Manager(
-  'Fionaeam1',
+  'Fiona',
   'FionaTeam1ID',
   'FionaTeam1@manager.com',
   'FionaTeam1officeNumber'
@@ -89,10 +89,10 @@ managerMenber1.push(newManager5);
 testingAllEmplyee[1].engineer = engMenber1;
 
 const newEngineer2 = new Engineer(
-  'HarrieTeam1',
-  'HarrieTeam1ID',
-  'HarrieyTeam1@engineer.com',
-  'HarrieTeam1Github'
+  'Harri',
+  'Harrie1234',
+  'Harrie1234@engineer.com',
+  'Harrie1Github'
 );
 
 engMenber1.push(newEngineer2);
@@ -100,17 +100,17 @@ engMenber1.push(newEngineer2);
 testingAllEmplyee[1].intern = internMenber1;
 
 const newIntern2 = new Intern(
-  'IvyTeam1',
-  'IvyTeam1ID',
-  'IvyTeam1@eintern.com',
-  'IvyTeam1School'
+  'Ivy',
+  'Ivy1234',
+  'Ivy1234@eintern.com',
+  'IvySchool'
 );
 
 const newIntern3 = new Intern(
-  'JackyTeam1',
-  'JackyTeam1ID',
-  'JackyTeam1@eintern.com',
-  'JackyTeam1School'
+  'Jacky',
+  'Jacky1234',
+  'Jacky1234@eintern.com',
+  'JackySchool'
 );
 
 internMenber1.push(newIntern2);
@@ -129,17 +129,17 @@ testingAllEmplyee[2].intern = internMenber2;
 testingAllEmplyee[2].engineer = engMenber2;
 
 const newEngineer3 = new Engineer(
-  'KatieTeam2',
-  'KatieTeam2ID',
-  'KatieTeam2@engineer.com',
-  'KatieTeam2Github'
+  'Katie',
+  'Katie1234',
+  'Katie1234@engineer.com',
+  'KatieGithub'
 );
 
 const newEngineer4 = new Engineer(
-  'LilyTeam2',
-  'LilyTeam2ID',
-  'LilyTeam2@engineer.com',
-  'LilyTeam2Github'
+  'Lily',
+  'Lily1234',
+  'Lily1234@engineer.com',
+  'LilyGithub'
 );
 
 engMenber2.push(newEngineer3);
